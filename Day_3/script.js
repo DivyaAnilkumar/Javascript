@@ -22,7 +22,7 @@ function validate() {
     // if (regex.test(email.value)) {
     //     error1.innerText="Email is valid";
     //     error1.style.color="green";   
-    //     return true; l
+    //     return true; 
 
     
     //  else {
@@ -45,13 +45,29 @@ function validate() {
 }
 //Exception Handling
 //throw creates custom errors
-var er1=document.getElementById('error')
-function show() {
-    try {
-        alerrt('Hi I am here'); 
-    } catch (error) {
-        er1.innerText=error;
-    }
+// var er1=document.getElementById('error')
+// function show() {
+//     try {
+//         alerrt('Hi I am here'); 
+//     } catch (error) {
+//         er1.innerText=error;
+//     }
    
+// }
+var txt=document.getElementById('inp');
+var err3=document.getElementById('error');
+function show() {
+  try {
+    let x=txt.value;
+    if(isNaN(x)) throw 'Please enter a number'
+    if(x<50) throw 'Number must be greater than 50'
+  
+  } catch (error) {
+    err3.innerText=error;
+  }
+  finally{
+    txt.value=0;
+  }
 }
+
 
